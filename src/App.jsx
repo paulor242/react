@@ -60,14 +60,14 @@ function TodoList() {
     { id: 3, texto: "Descansar", completada: true },
   ]);
 
-  const usuario = "Ana";
+  const usuario = "paulo";
   const htmlCrudo = "<p>Este es un <strong>texto en negrita</strong> renderizado con html-react-parser.</p>";
 
   const [nuevaTarea, setNuevaTarea] = useState("");
 
   // Agregar nueva tarea
   function agregarTarea() {
-    if (nuevaTarea.trim() === "") { // ✅ corregido
+    if (nuevaTarea.trim() === "") { 
       return;
     }
 
@@ -92,7 +92,7 @@ function TodoList() {
     setTareas(nuevasTareas);
   };
 
-  // ✅ Ahora el return está en el lugar correcto
+  
   return (
     <>
       <h2 className="titulo">Lista de Tareas de {usuario}</h2>
