@@ -25,7 +25,7 @@ export default TodoList;*/
 
 
 
-
+/*
 import './TodoList.css';
 import parse from 'html-react-parser';
 function TodoList(){
@@ -60,7 +60,7 @@ function TodoList(){
                     ))}
                 </ul>
                 
-            )} */}
+            )} }
 
             {tareas.map((tarea, index)=>(
                 <li key={index} className='tarea'>{tarea}</li>
@@ -71,7 +71,15 @@ function TodoList(){
 }
 
 export default TodoList;
+*/
 
 
 
+
+export const formatearEstadoTarea = (completada) => {
+    return completada ? "Completada" : "Pendiente";
+};
+    export const contarTareasCompletadas = (tareas) => {
+    return tareas.filter((tarea) => tarea.completada).length;
+};
 

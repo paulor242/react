@@ -49,7 +49,7 @@
 // }
 // export default TodoList;
 
-
+/*
 import { useState } from 'react';
 import parse from 'html-react-parser';
 
@@ -122,4 +122,37 @@ function TodoList() {
   );
 }
 
+export default TodoList;*/
+
+
+import './components/TodoList';
+import parse from 'html-react-parser';
+import { formatearEstadoTarea, contarTareasCompletadas } from '../src/components/TodoList';
+function TodoList() {
+const tareas = [
+    { id: 1, texto: "Aprender React", completada: true },
+    { id: 2, texto: "Hacer un proyecto", completada: true },
+    { id: 3, texto: "Descansar", completada: false }
+];
+const usuario = "Ana";
+const htmlCrudo = "<p>Este es un <strong>texto en negrita</strong> renderizado con html-react-parser.</p>";
+return (
+    <>
+        <h2 className="titulo">Lista de Tareas de {usuario}</h2>
+        <div>{parse(htmlCrudo)}</div>
+        <p>Tareas completadas: {contarTareasCompletadas(tareas)} de {tareas.length}</p>
+    <ul>
+      {tareas.map((tarea) => (
+      <li
+        key={tarea.id}
+        className="tarea"
+        style={{ textDecoration: tarea.completada ? "line-through" : "none" }}
+    >
+        {tarea.texto} (Estado: {formatearEstadoTarea(tarea.completada)})
+    </li>
+    ))}
+    </ul>
+  </>
+);
+}
 export default TodoList;
