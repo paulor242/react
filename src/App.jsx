@@ -122,7 +122,7 @@ function TodoList() {
   );
 }
 
-export default TodoList;*/
+export default TodoList;
 
 
 import './components/TodoList';
@@ -156,3 +156,41 @@ return (
 );
 }
 export default TodoList;
+
+
+import Header from './components/header';
+function App() {
+  return (
+    <div>
+      <Header />
+    </div>
+  );
+}
+export default App;
+
+import React, { Component } from 'react';
+class Header extends Component {
+  render() {
+    return (
+      <header>
+        <h1>Gestor de Tareas</h1>
+        <p>Bienvenido a tu aplicación de tareas en React 2025</p>
+      </header>
+    );
+  }
+}
+export default Header;
+*/
+
+
+import Header from './components/header';
+import TaskCounter from './components/header';
+function App() {
+  return (
+    <div>
+      <Header />
+      <TaskCounter />
+    </div>
+  );
+}
+export default App;
